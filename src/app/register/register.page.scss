@@ -3,7 +3,7 @@
 }
 
 .axContentBackground {
-  --background: #fff url("/assets/img/back_login.png") no-repeat 50% fixed / cover;
+  --background: #fff url("/assets/img/back_live.png") no-repeat 50% fixed / cover;
 }
 
 .axContent {
@@ -19,7 +19,6 @@
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  margin-top: 10px;
 }
 
 .axInputHint {
@@ -27,7 +26,7 @@
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  font-size: 0.9em;
+  font-size: 10px;
   line-height: 11px;
   height: 30px;
   color: #3d637a;
@@ -46,11 +45,6 @@
   background-color: rgba(27, 20, 100, 0.58);
 }
 
-// ion-input {
-//   --placeholder-color: white;
-//   --placeholder-opacity: 1;
-// }
-
 .axBtnForm {
   background-color: rgba(27, 20, 100, 0.52);
   color: #fff;
@@ -66,25 +60,14 @@
 .axBtnRegister {
   background-color: rgb(40, 54, 98);
   color: #fff;
-  border-radius: 2em;
-  -moz-border-radius: 2em;
-  -webkit-border-radius: 2em;
+  border-radius: 32.5px;
+  -moz-border-radius: 32.5px;
+  -webkit-border-radius: 32.5px;
   font-size: 1em;
   font-weight: 900;
   width: 125px;
-  height: 2em;
+  height: 32.5px;
   margin: auto;
-}
-
-.axDivRecover {
-  text-align: center;
-}
-
-.axBtnRecover {
-  font-size: 0.8em;
-  margin: auto;
-  color: #fff;
-  text-decoration: none;
 }
 
 .axFormTitle {
@@ -97,10 +80,47 @@
   display: block;
 }
 
-.axValid {
-  position: absolute;
-  right: 0.3em;
-  top: 0.6em;
-  width: 19.5px;
-  height: 15.6px;
+.axFieldTitle {
+  width: 100%;
+  text-align: left;
+  display: block;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.axFieldSubtitle {
+  width: 100%;
+  text-align: left;
+  display: block;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.axImgSocial {
+  width: 60px;
+  height: 60px;
+}
+
+.axSocialNetworks {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.axSocialNetworks span {
+  font-size: 16px;
+  font-weight: 900;
+  color: #283662;
+  text-align: center;
+  margin-bottom: 7.4px;
+}
+
+.axSocialButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }

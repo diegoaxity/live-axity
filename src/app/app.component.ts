@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 import { FCM } from '@ionic-native/fcm/ngx';
 import { Router } from '@angular/router';
@@ -17,7 +18,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private fcm: FCM,
-    private router: Router
+    private router: Router,
+    private screenOrientation: ScreenOrientation
   ) {
     // obtener token FCM
     this.fcm.getToken().then(token => {
@@ -49,6 +51,7 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

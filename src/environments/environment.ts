@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlBase: 'https://f9d16903.ngrok.io/api',
+  urlBase: 'https://vive.axity.com:3000/api',
   urlClient: 'http://10.11.10.128:4200',
   // social login configuration
   fbAppId: '2192915390823251',
@@ -16,7 +16,8 @@ export const environment = {
   subscriptionToTopicPart1: 'https://iid.googleapis.com/iid/v1/',
   subscriptionToTopicPart2: '/rel/topics/axity',
   users: '/users',
-  login: '/addClient',
+  login: '/login',
+  register: '/addClient',
   findClient: '/findClient',
   getAllLogins: '/meraky/users',
   ar: '/getAr',

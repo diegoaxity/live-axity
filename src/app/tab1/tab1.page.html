@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar class="axHeaderBackground">
     <ion-title align-title color="light" text-center>
-      <img src="../../assets/img/logo_live.png" class="axTitle"/>
+      <img src="../../assets/img/logo_live.png" class="axTitle" />
     </ion-title>
     <ion-buttons slot="secondary">
       <ion-button color="light">
@@ -27,26 +27,37 @@
     </div>
   </ion-list-->
   <div>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <h1>Slide 1</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 2</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 3</h1>
+      </ion-slide>
+    </ion-slides>
     <ion-row>
-      <ion-col col="12" size="6" offset="3" >
+      <ion-col col="12" size="6" offset="3">
         <div class="axMenuIconList">
           <div class="axMenuIcon">
-            <img src="../../assets/icon/menu_bot.png"/>
+            <img src="../../assets/icon/menu_bot.png" />
             <div>Bot</div>
             <div class="axColorLine"></div>
           </div>
           <div class="axMenuIcon">
-            <img src="../../assets/icon/menu_ruta.png"/>
+            <img src="../../assets/icon/menu_ruta.png" />
             <div>Ruta virtual</div>
             <div class="axColorLine"></div>
           </div>
           <div class="axMenuIcon">
-            <img src="../../assets/icon/menu_localiza.png"/>
+            <img src="../../assets/icon/menu_localiza.png" />
             <div>Localiza</div>
             <div class="axColorLine"></div>
           </div>
           <div class="axMenuIcon">
-            <img src="../../assets/icon/menu_aumentada.png"/>
+            <img src="../../assets/icon/menu_aumentada.png" />
             <div>Realidad aumentada</div>
             <div class="axColorLine"></div>
           </div>
@@ -54,6 +65,6 @@
       </ion-col>
     </ion-row>
   </div>
-  
-  
+
+
 </ion-content>

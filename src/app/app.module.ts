@@ -10,6 +10,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FCM } from '@ionic-native/fcm/ngx';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RestInterceptor } from './utils/rest.interceptor';
@@ -17,7 +18,7 @@ import { RestInterceptor } from './utils/rest.interceptor';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,
@@ -32,4 +33,4 @@ import { RestInterceptor } from './utils/rest.interceptor';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

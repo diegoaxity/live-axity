@@ -8,10 +8,10 @@ import { Subject } from 'rxjs';
 export class MessageService {
   constructor(public toastController: ToastController) { }
 
-  async postMessage(msg: string) {
+  async postMessage(msg: string, duration?: number) {
     const toast = await this.toastController.create({
       message: msg,
-      duration: 3000
+      duration: duration || 3000
     });
     toast.present();
   }

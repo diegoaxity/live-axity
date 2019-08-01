@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RecoverPage } from './recover.page';
+import { HomePage } from './home.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: RecoverPage
+    component: HomePage
   }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
+    FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RecoverPage]
+  declarations: [HomePage]
 })
-export class RecoverPageModule { }
+export class HomePageModule {}

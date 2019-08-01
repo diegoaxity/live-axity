@@ -8,7 +8,7 @@
       </div>
     </ion-col>
     <ion-col>
-      <form [formGroup]="formRegister" (ngSubmit)="login()">
+      <form [formGroup]="formRegister" (ngSubmit)="register()">
         <ion-grid>
           <ion-row color="primary" justify-content-center>
             <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
@@ -16,29 +16,28 @@
                 <span class="axFormTitle">
                   Registro
                 </span>
-                <ion-input clearInput class="axInputForm" type="text" placeholder="Nickname" mode="md"
-                  formControlName="nickname"></ion-input>
-                <div class="axInputHint">
-                  Tu alias debe ser sin caracteres especiales (!"·$%*Ç), sin acentos y sin espacios. Puede tener
-                  números.
+                <ion-input class="axInputForm" type="text" placeholder="Nickname" mode="md" formControlName="nickname">
+                </ion-input>
+                <div class="axInputHint" *ngIf="formRegister.get('nickname').hasError('pattern')">
+                  No se aceptan caracteres especiales (!"·$%*Ç), sin acentos y sin espacios.
                 </div>
-                <ion-input clearInput class="axInputForm" type="text" placeholder="Nombre" mode="md"
-                  formControlName="firstName"></ion-input>
-                <ion-input clearInput class="axInputForm" type="text" placeholder="Primer Apellido" mode="md"
+                <ion-input class="axInputForm" type="text" placeholder="Nombre" mode="md" formControlName="firstName">
+                </ion-input>
+                <ion-input class="axInputForm" type="text" placeholder="Primer Apellido" mode="md"
                   formControlName="lastName"></ion-input>
-                <ion-input clearInput class="axInputForm" type="text" placeholder="Correo" mode="md"
-                  formControlName="email"></ion-input>
+                <ion-input class="axInputForm" type="text" placeholder="Correo" mode="md" formControlName="email">
+                </ion-input>
                 <span class="axFieldTitle">
                   Teléfono
                 </span>
-                <ion-input clearInput class="axInputForm" type="text" placeholder="(55) 00000000" mode="md"
-                  formControlName="phone"></ion-input>
+                <ion-input class="axInputForm" type="text" placeholder="(55) 00000000" mode="md"
+                  formControlName="phone">
+                </ion-input>
                 <span class="axFieldSubtitle">
-                  Ingresa máximo 8 dígitos
+                  Ingresa máximo 10 dígitos
                 </span>
               </div>
               <div padding>
-                <!--ion-button size="large" type="submit" [disabled]="form.invalid" expand="block" class="axBtnForm" color="transparent">Vivir la experiencia</ion-button-->
                 <ion-button type="submit" expand="block" class="axBtnForm" color="transparent" fill="clear" mode="ios"
                   [disabled]="formRegister.invalid">
                   Vivir la experiencia
@@ -51,6 +50,9 @@
                   <img class="axImgSocial" src="assets/img/google.png" (click)="loginSocial('google')">
                   <img class="axImgSocial" src="assets/img/linkedin.png" (click)="loginSocial('linkedin')">
                 </div>
+              </div>
+              <div padding class="axDivRecover">
+                <a [routerLink]="['/login']" class="axBtnRecover">Iniciar sesión</a>
               </div>
             </ion-col>
           </ion-row>

@@ -11,6 +11,13 @@ import { Subscription } from 'rxjs';
 export class Tab1Page implements OnInit {
   menuBot: string = 'assets/icon/menu_bot.png';
   userList: User[];
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    autoplay: {
+      delay: 3000,
+    }
+  };
   private subscription: Subscription = new Subscription();
 
   constructor(

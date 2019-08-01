@@ -4,9 +4,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
-  { path: 'recover', loadChildren: './recover/recover.module#RecoverPageModule' }
+  { path: 'recover', loadChildren: './recover/recover.module#RecoverPageModule' },
+  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
 ];
 @NgModule({
   imports: [
@@ -14,4 +15,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

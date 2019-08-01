@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { Storage } from '@ionic/storage';
 
 import { FCM } from '@ionic-native/fcm/ngx';
 import { Router } from '@angular/router';
@@ -19,8 +20,11 @@ export class AppComponent {
     private statusBar: StatusBar,
     private fcm: FCM,
     private router: Router,
-    private screenOrientation: ScreenOrientation
+    private screenOrientation: ScreenOrientation,
+    private storage: Storage
   ) {
+    this.splashScreen.show();
+
     // obtener token FCM
     this.fcm.getToken().then(token => {
       console.log(token);
@@ -54,6 +58,12 @@ export class AppComponent {
       this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.storage.get('user').then((user) => {
+        console.log(user);
+        if (user) {
+          this.router.navigate(['/tabs/tab1']);
+        }
+      });
     });
   }
 }

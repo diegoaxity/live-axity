@@ -18,6 +18,7 @@ export const environment = {
   users: '/users',
   login: '/login',
   register: '/addClient',
+  recover: '/recover',
   findClient: '/findClient',
   getAllLogins: '/meraky/users',
   ar: '/getAr',

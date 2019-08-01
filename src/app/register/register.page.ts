@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { MessageService } from '../services/message.service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-register',
@@ -21,10 +22,11 @@ export class RegisterPage implements OnInit {
     private messageService: MessageService
   ) {
     this.formRegister = this.formBuilder.group({
-      nickname: ['', [Validators.required, Validators.pattern(/[A-Za-z0-9]+/)]],
+      nickname: ['', [Validators.required, Validators.pattern('^[0-9A-Za-z]*$')]],
+      // tslint:disable-next-line: max-line-length
+      email: ['', [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required]
     });
   }
@@ -33,7 +35,17 @@ export class RegisterPage implements OnInit {
   }
 
   register() {
-
+    const user = new User();
+    user.userAlias = this.formRegister.get('nickname').value;
+    user.userEmail = this.formRegister.get('email').value;
+    user.userName = this.formRegister.get('firstName').value;
+    user.userLastName = this.formRegister.get('lastName').value;
+    // user.phone = this.formRegister.get('phone').value;
+    this.authService.register(user).subscribe(res => {
+      // TODO registro correcto
+    }, err => {
+      this.messageService.postMessage(err);
+    });
   }
 
   loginSocial(type: string) {
